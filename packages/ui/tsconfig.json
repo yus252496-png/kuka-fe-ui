@@ -1,0 +1,10 @@
+{
+  "extends": "../../tsconfig.base.json",
+  "compilerOptions": {
+    "tsBuildInfoFile": "./node_modules/.tmp/tsconfig.ui.tsbuildinfo",
+    "outDir": "./dist",
+    "rootDir": "./src",
+    "types": ["vitest/globals"]
+  },
+  "include": ["src"]
+}

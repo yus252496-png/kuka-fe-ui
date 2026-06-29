@@ -1,0 +1,12 @@
+{
+  "name": "kuka-fe-ui",
+  "private": true,
+  "packageManager": "pnpm@10.34.4",
+  "scripts": {
+    "build": "pnpm --filter @kuka-fe/ui build",
+    "test": "pnpm --filter @kuka-fe/ui test",
+    "storybook": "pnpm --filter @kuka-fe/storybook storybook",
+    "build:storybook": "pnpm --filter @kuka-fe/storybook build",
+    "dev": "pnpm --filter @kuka-fe/ui dev"
+  }
+}

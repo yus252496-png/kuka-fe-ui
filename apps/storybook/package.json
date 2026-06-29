@@ -1,0 +1,21 @@
+{
+  "name": "@kuka-fe/storybook",
+  "version": "0.1.0",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "storybook": "storybook dev -p 6006",
+    "build": "storybook build"
+  },
+  "dependencies": {
+    "@kuka-fe/ui": "workspace:*"
+  },
+  "devDependencies": {
+    "@storybook/addon-a11y": "^8",
+    "@storybook/addon-essentials": "^8",
+    "@storybook/addon-interactions": "^8",
+    "@storybook/react": "^8",
+    "@storybook/react-vite": "^8",
+    "storybook": "^8"
+  }
+}

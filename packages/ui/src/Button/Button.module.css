@@ -1,0 +1,176 @@
+/* ═══════════════════════════════════════════════════════
+   Button 组件样式
+   所有颜色值引用 Design Tokens CSS 变量
+   ═══════════════════════════════════════════════════════ */
+
+/* ── 基础结构 ── */
+
+.button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: var(--kuka-spacing-sm);
+  border: 1px solid transparent;
+  border-radius: var(--kuka-radius-md);
+  font-family: var(--kuka-font-family-sans);
+  font-weight: var(--kuka-font-weight-medium);
+  line-height: 1;
+  cursor: pointer;
+  user-select: none;
+  white-space: nowrap;
+  transition:
+    background var(--kuka-transition),
+    border-color var(--kuka-transition),
+    opacity var(--kuka-transition),
+    box-shadow var(--kuka-transition);
+
+  /* 重置默认 button 样式 */
+  outline: none;
+  -webkit-font-smoothing: antialiased;
+}
+
+.button:focus-visible {
+  box-shadow: 0 0 0 2px rgba(0, 212, 255, 0.4);
+}
+
+.button:disabled,
+.button.loading {
+  opacity: 0.4;
+  pointer-events: none;
+}
+
+/* ── 撑满宽度 ── */
+
+.block {
+  display: flex;
+  width: 100%;
+}
+
+/* ── 尺寸 ── */
+
+.sm {
+  height: 28px;
+  padding: 0 var(--kuka-spacing-md);
+  font-size: var(--kuka-font-size-sm);
+  border-radius: var(--kuka-radius-sm);
+}
+
+.md {
+  height: 34px;
+  padding: 0 var(--kuka-spacing-lg);
+  font-size: var(--kuka-font-size-md);
+}
+
+.lg {
+  height: 42px;
+  padding: 0 var(--kuka-spacing-xl);
+  font-size: 15px;
+}
+
+/* ── variant: primary ── */
+
+.primary {
+  background: var(--kuka-color-primary);
+  color: #000;
+  border-color: transparent;
+}
+
+.primary:hover {
+  background: var(--kuka-color-primary-hover);
+}
+
+.primary:active {
+  background: var(--kuka-color-primary-active);
+}
+
+/* ── variant: secondary ── */
+
+.secondary {
+  background: transparent;
+  color: var(--kuka-text-primary);
+  border-color: var(--kuka-border-color);
+}
+
+.secondary:hover {
+  background: rgba(255, 255, 255, 0.04);
+}
+
+.secondary:active {
+  background: rgba(255, 255, 255, 0.08);
+}
+
+/* ── variant: outline ── */
+
+.outline {
+  background: transparent;
+  color: var(--kuka-color-primary);
+  border-color: var(--kuka-color-primary);
+}
+
+.outline:hover {
+  background: rgba(0, 212, 255, 0.08);
+}
+
+.outline:active {
+  background: rgba(0, 212, 255, 0.16);
+}
+
+/* ── variant: ghost ── */
+
+.ghost {
+  background: transparent;
+  color: var(--kuka-text-secondary);
+  border-color: transparent;
+}
+
+.ghost:hover {
+  background: rgba(255, 255, 255, 0.04);
+  color: var(--kuka-text-primary);
+}
+
+/* ── variant: danger ── */
+
+.danger {
+  background: var(--kuka-color-danger);
+  color: #fff;
+  border-color: transparent;
+}
+
+.danger:hover {
+  background: var(--kuka-color-danger-hover);
+}
+
+.danger:active {
+  background: #e63945;
+}
+
+/* ── 内部元素 ── */
+
+.content {
+  display: inline-flex;
+  align-items: center;
+}
+
+.icon {
+  display: inline-flex;
+  align-items: center;
+  font-size: 1.1em;
+}
+
+/* ── Loading Spinner ── */
+
+.spinner {
+  display: inline-block;
+  width: 1em;
+  height: 1em;
+  border: 2px solid currentColor;
+  border-right-color: transparent;
+  border-radius: 50%;
+  animation: spin 0.6s linear infinite;
+}
+
+@keyframes spin {
+  to {
+    transform: rotate(360deg);
+  }
+}
