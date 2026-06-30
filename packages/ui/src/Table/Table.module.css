@@ -1,0 +1,230 @@
+/* ═══════════════════════════════════════════════════════
+   Table 组件样式
+   所有颜色引用 Design Tokens CSS 变量
+   ═══════════════════════════════════════════════════════ */
+
+.wrapper {
+  width: 100%;
+  overflow: hidden;
+  border: 1px solid var(--kuka-border-color);
+  border-radius: var(--kuka-radius-md);
+  background: var(--kuka-bg-elevated);
+}
+
+.tableContainer {
+  overflow-x: auto;
+}
+
+.table {
+  width: 100%;
+  border-collapse: collapse;
+  font-family: var(--kuka-font-family-sans);
+  font-size: var(--kuka-font-size-md);
+  color: var(--kuka-text-primary);
+}
+
+/* ── 表头 ── */
+
+.th {
+  padding: 10px var(--kuka-spacing-md);
+  text-align: left;
+  font-weight: var(--kuka-font-weight-medium);
+  font-size: var(--kuka-font-size-sm);
+  color: var(--kuka-text-secondary);
+  background: rgba(255, 255, 255, 0.02);
+  border-bottom: 1px solid var(--kuka-border-color-light);
+  white-space: nowrap;
+  user-select: none;
+  position: relative;
+  transition: background var(--kuka-transition);
+}
+
+.th.sortable {
+  cursor: pointer;
+}
+
+.th.sortable:hover {
+  background: rgba(0, 212, 255, 0.06);
+}
+
+.thContent {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--kuka-spacing-xs);
+}
+
+/* ── 排序图标 ── */
+
+.sortIcons {
+  display: inline-flex;
+  flex-direction: column;
+  line-height: 1;
+  gap: 1px;
+  margin-left: 4px;
+  opacity: 0.35;
+}
+
+.sortArrow {
+  font-size: 8px;
+  color: var(--kuka-text-tertiary);
+  transition: color var(--kuka-transition);
+}
+
+.sortActive {
+  color: var(--kuka-color-primary);
+  opacity: 1;
+}
+
+/* ── 行 ── */
+
+.tr {
+  border-bottom: 1px solid var(--kuka-border-color-lighter);
+  transition: background var(--kuka-transition);
+}
+
+.tr:last-child {
+  border-bottom: none;
+}
+
+.tr:hover {
+  background: rgba(0, 212, 255, 0.03);
+}
+
+.tr.clickable {
+  cursor: pointer;
+}
+
+/* ── 单元格 ── */
+
+.td {
+  padding: 10px var(--kuka-spacing-md);
+  color: var(--kuka-text-primary);
+  white-space: nowrap;
+}
+
+/* ── 对齐 ── */
+
+.alignCenter {
+  text-align: center;
+}
+
+.alignRight {
+  text-align: right;
+}
+
+/* ── 固定列 ── */
+
+.fixedLeft {
+  position: sticky;
+  left: 0;
+  z-index: 1;
+  background: inherit;
+}
+
+.fixedRight {
+  position: sticky;
+  right: 0;
+  z-index: 1;
+  background: inherit;
+}
+
+/* ── Loading ── */
+
+.loadingCell {
+  text-align: center;
+  padding: 40px var(--kuka-spacing-md);
+}
+
+.loadingOverlay {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: var(--kuka-spacing-md);
+  color: var(--kuka-text-tertiary);
+  font-size: var(--kuka-font-size-sm);
+}
+
+.spinner {
+  display: inline-block;
+  width: 24px;
+  height: 24px;
+  border: 2px solid var(--kuka-border-color);
+  border-top-color: var(--kuka-color-primary);
+  border-radius: 50%;
+  animation: spin 0.6s linear infinite;
+}
+
+@keyframes spin {
+  to { transform: rotate(360deg); }
+}
+
+/* ── 空状态 ── */
+
+.emptyCell {
+  text-align: center;
+  padding: 40px var(--kuka-spacing-md);
+  color: var(--kuka-text-tertiary);
+  font-size: var(--kuka-font-size-sm);
+}
+
+/* ── 分页栏 ── */
+
+.paginationBar {
+  display: flex;
+  justify-content: flex-end;
+  padding: var(--kuka-spacing-sm) var(--kuka-spacing-md);
+  border-top: 1px solid var(--kuka-border-color-lighter);
+}
+
+/* ── 分页器 ── */
+
+.pagination {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  font-size: var(--kuka-font-size-sm);
+}
+
+.pageBtn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-width: 28px;
+  height: 28px;
+  padding: 0 6px;
+  border: 1px solid var(--kuka-border-color);
+  border-radius: var(--kuka-radius-sm);
+  background: transparent;
+  color: var(--kuka-text-secondary);
+  font-family: var(--kuka-font-family-sans);
+  font-size: var(--kuka-font-size-sm);
+  cursor: pointer;
+  transition: all var(--kuka-transition);
+}
+
+.pageBtn:hover:not(.disabled):not(.active) {
+  border-color: var(--kuka-color-primary);
+  color: var(--kuka-color-primary);
+}
+
+.pageBtn.active {
+  background: var(--kuka-color-primary);
+  border-color: var(--kuka-color-primary);
+  color: #000;
+}
+
+.pageBtn.disabled {
+  opacity: 0.3;
+  cursor: not-allowed;
+}
+
+.ellipsis {
+  color: var(--kuka-text-tertiary);
+  padding: 0 4px;
+}
+
+.pageInfo {
+  margin-left: var(--kuka-spacing-sm);
+  color: var(--kuka-text-tertiary);
+  font-size: var(--kuka-font-size-xs);
+}
