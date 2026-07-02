@@ -1,0 +1,81 @@
+.message {
+  display: flex;
+  gap: var(--kuka-spacing-md);
+  max-width: 80%;
+  font-family: var(--kuka-font-family-sans);
+}
+
+.user {
+  flex-direction: row-reverse;
+  align-self: flex-end;
+}
+
+.assistant {
+  align-self: flex-start;
+}
+
+.avatar {
+  flex-shrink: 0;
+  width: 32px;
+  height: 32px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+  font-size: 16px;
+  background: rgba(255, 255, 255, 0.06);
+}
+
+.bubble {
+  padding: var(--kuka-spacing-sm) var(--kuka-spacing-md);
+  border-radius: var(--kuka-radius-md);
+  background: var(--kuka-bg-elevated);
+  border: 1px solid var(--kuka-border-color);
+  min-width: 60px;
+}
+
+.user .bubble {
+  background: rgba(0, 212, 255, 0.1);
+  border-color: rgba(0, 212, 255, 0.3);
+}
+
+.role {
+  font-size: var(--kuka-font-size-xs);
+  color: var(--kuka-text-tertiary);
+  margin-bottom: 2px;
+}
+
+.content {
+  font-size: var(--kuka-font-size-md);
+  color: var(--kuka-text-primary);
+  line-height: var(--kuka-line-height);
+  white-space: pre-wrap;
+  word-break: break-word;
+}
+
+/* ── 流式光标 ── */
+
+.cursor {
+  display: inline-block;
+  width: 2px;
+  height: 1em;
+  background: var(--kuka-color-primary);
+  margin-left: 2px;
+  vertical-align: text-bottom;
+  animation: blink 0.8s step-end infinite;
+}
+
+@keyframes blink {
+  50% { opacity: 0; }
+}
+
+/* ── 错误态 ── */
+
+.errorMsg .bubble {
+  border-color: var(--kuka-color-danger);
+  background: rgba(255, 71, 87, 0.08);
+}
+
+.errorMsg .content {
+  color: var(--kuka-color-danger);
+}
